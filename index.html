@@ -19,6 +19,14 @@
         .nav-link:hover { color: #3b82f6; border-bottom: 2px solid #3b82f6; }
         .lang-active {background-color: #2563eb; color: white;}
         .demo-video {background: #000;}
+        /* 一个简单的渐显效果 */
+        .scene-btn:not(.hidden) {
+            animation: fadeInScale 0.3s ease-out;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 </head>
 
@@ -367,6 +375,11 @@
                     class="scene-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-700 border border-gray-300 hover:bg-gray-100 transition"
                     data-scene="other" data-lang-group="cn-only">
                     Other
+                </button>
+                <button
+                    class="scene-btn hidden px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-700 border border-gray-300 hover:bg-gray-100 transition"
+                    data-scene="compare" data-lang-group="en-only">
+                    Compare
                 </button>
             </div>
 
@@ -2638,6 +2651,178 @@
                 </div>
             </div>
 
+            <!-- Scene Content -->
+            <div class="scene-content hidden" id="scene-en-compare">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 relative">
+                        <h4 class="text-center text-2xl font-bold text-blue-600 tracking-wide">FunCineForge</h4>
+                        <h4 class="text-center text-2xl font-bold text-blue-600 tracking-wide">DeepDubber</h4>
+                        <h4 class="text-center text-2xl font-bold text-green-600 tracking-wide" data-i18n="real"></h4>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_3.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_3_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_3_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            monologue (emotional)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;An adult female speaker expresses a sense of sudden realization and excitement. His tone is bright and nostalgic as he recalls a significant event from the past. The overall emotion is one of pleasant surprise and anticipation.&lt;|endofclue|&gt; 
+                            Oh my God. Do you remember that bottle of wine we put aside the night Haley was born?"
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_1.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_1_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/monologue/monologue_1_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            monologue (far shot)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;A single adult male, with a deep, professional, and clear voice, speaks of the end of a distinguished ballet dancer's career, concluding with a respectful remark. His pace is steady and clear. The overall emotion is neutral and informative.&lt;|endofclue|&gt; 
+                            It marks the end of a stunning career of one of ballet's greatest talents, Odessa Kozlova, a true prima."
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/narration/narration_3.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/narration/narration_3_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/narration/narration_3_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            narration (fast speech and numbers)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;A single male speaker shares a personal anecdote with a narrative and enthusiastic tone. He recounts a pleasant experience at a relatively fast pace, with his emotions gradually rising.&lt;|endofclue|&gt; 
+                            For others, it's when they got their first puppy. For me, it was the day I received a box of 57 defective smoke detectors loaded with americium-241."
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_2.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_2_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_2_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            dialogue (emotional)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;An argument between two adult speakers. The male speaker initiates with a condescending and confrontational tone regarding financial contributions. The female speaker immediately retorts with a sharp, defensive, and annoyed tone, challenging his arrogance. The overall emotional state is one of intense anger and domestic tension.&lt;|endofclue|&gt; 
+                            You like how my job pays for all the bills, right? Stop acting like you're the only one with a job."
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_8.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_8_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/dialogue/dialogue_8_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            dialogue (fast speaker switching)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;A conversation between two teenagers. Speaker 1 speaks with a sharp and mocking tone, expressing disgust and superiority. Speaker 2 responds briefly with a defensive and somewhat flat tone. The conversation is characterized by friction and hostility.&lt;|endofclue|&gt; 
+                            It's a list of losers like you who can't find a friend. So? So they're desperate, and you have their names."
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-blue-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/multi-speaker/multi-speaker_2.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/multi-speaker/multi-speaker_2_deepdubber.mp4" type="video/mp4"></video>
+                            </div>
+                            <div class="rounded-xl overflow-hidden demo-video aspect-video border border-green-100">
+                            <video controls class="w-full h-full object-contain"><source src="https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/FunCineForge/EN/multi-speaker/multi-speaker_2_gt.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-4 text-sm text-gray-700">
+                            <span class="font-semibold text-gray-900">Type:</span>
+                            multi-speaker (speaker occlusion)
+                        </div>
+
+                        <!-- Clue + Text -->
+                        <div class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            <span class="font-semibold text-gray-900">Clue + Text:</span>
+                            "&lt;|startofclue|&gt;A dialogue between three speakers. The first female speaker begins with a playful observation. The second male speaker responds with a calm, questioning tone. The third male speaker follows with a sarcastic remark, expressing humorous resentment. The overall atmosphere is informal and conversational, with a touch of teasing.&lt;|endofclue|&gt; 
+                            I know those lips, right? Hey, hey, hey, is that appropriate? Appropriate? You never carried us around as proudly as you're carrying around that thing."
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -2899,19 +3084,23 @@ langBtns.forEach(lBtn => {
     lBtn.classList.replace('bg-white', 'bg-blue-600');
     lBtn.classList.replace('text-gray-700', 'text-white');
 
-    // 控制“中文特有”按钮的显示/隐藏
+    // 控制“仅中文”按钮的显示/隐藏
     const cnOnlyBtns = document.querySelectorAll('[data-lang-group="cn-only"]');
     cnOnlyBtns.forEach(btn => {
-      if (currentLang === 'en') {
-        btn.classList.add('hidden');
-      } else {
-        btn.classList.remove('hidden');
-      }
+      btn.classList.toggle('hidden', currentLang === 'en');
+    });
+    // 处理“仅英文”按钮的显示/隐藏
+    const enOnlyBtns = document.querySelectorAll('[data-lang-group="en-only"]');
+    enOnlyBtns.forEach(btn => {
+      btn.classList.toggle('hidden', currentLang === 'cn');
     });
 
-    // 重点：如果当前选中的是中文特有类，切换到英文时强制跳回第一个
     const activeBtn = document.querySelector('.scene-btn.bg-blue-600');
     if (currentLang === 'en' && activeBtn.dataset.langGroup === 'cn-only') {
+        // 如果当前选中的是中文特有类，切换到英文时强制跳回第一个
+        sceneBtns[0].click(); // 自动模拟点击 Monologue
+    } else if (currentLang === 'cn' && activeBtn.dataset.langGroup === 'en-only') {
+        // 如果当前选中的是英文特有类，切换到中文时强制跳回第一个
         sceneBtns[0].click(); // 自动模拟点击 Monologue
     } else {
         // 否则刷新当前内容（以适配中英文内容切换）
